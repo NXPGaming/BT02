@@ -1,25 +1,17 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
-
-void PhanSoToiGian(int&, int&);
 
 int main()
 {
-	int tu, mau;
-	cin >> tu >> mau;
-	PhanSoToiGian(tu, mau);
-	return 0;
-}
+	int Fahrenheit;
+	cin >> Fahrenheit;
+	float Celsius = float((Fahrenheit-32)*5/9);
+	float Kelvin = Celsius + 273.15;
+	cout << "Fahrenheit   	Celsius  	Absolute Value" << endl;
+	cout << Fahrenheit << "\t \t"  << fixed << setprecision(2) << Celsius;
+	cout << "\t \t";
+	cout << fixed << setprecision(2) << Kelvin << endl;
 
-void PhanSoToiGian(int& tu, int& mau)
-{
-	int a = tu;
-	int b = mau;
-	while(a != b)
-	{
-		if(a > b) a = a-b;
-		else b = b-a;
-	}
-	int ucln = a;
-	cout << tu/a << '/' << mau/a;
+	return 0;
 }
